@@ -1,4 +1,5 @@
 # Minesweeper-in-Cs
+
 Ein Minesweeper Spiel in C-sharp aufgrund eines Schulprojektes
 
 ## 1. Rahmenbedingungen für die Umsetzung der funktionalen Anforderungen
@@ -59,6 +60,61 @@ gewünschtes Feld:
 - Die Stoppuhr, welche die Spielzeit für ein Spiel ausweist, ist optional
 - In der bekannten Version des Spiels kann man nicht nur blind Felder aufdecken, sondern auch solche markieren, wo sicher eine Mine liegt (In der oben genannten Onlineversion mit Rechtsklick). Diese Anforderung ist ebenfalls optional.
 
+## 3. Mermaid- und Sequenzdiagramm
 
+```mermaid
+classDiagram 
+    class IDifficulty {
+        <<interface>>
+        +int Width
+        +int Height
+        +int Mines
+    }
 
+    class Easy {
+        +int Width
+        +int Height
+        +int Mines
+    }
 
+    class Medium {
+    }
+
+    class Hard {
+    }
+
+    IDifficulty <|.. Easy  
+    IDifficulty <|.. Medium
+    IDifficulty <|.. Hard 
+
+    class Game {
+        +Reveal()
+        +Undo()
+        +IsGameOver
+        +IsOver
+    }
+
+    Game --> IDifficulty : implementiert
+
+    class GameMemento {
+        +Cell[,] SavedBoard
+        +bool SavedGameOver
+    }
+
+    class History {
+        +Save(GameMemento)
+        +Undo() GameMemento
+    }
+
+    Game --> History : nutzt
+    History o-- GameMemento : speichert Stapel
+    Game ..> GameMemento : erstellt
+
+    class Cell {
+        +bool IsMine
+        +bool IsRevealed
+        +int NeighborMines
+    }
+
+    Game *-- Cell : Spielfeld (Array)
+```
