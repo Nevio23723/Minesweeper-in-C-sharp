@@ -118,3 +118,58 @@ classDiagram
 
     Game *-- Cell : Spielfeld (Array)
 ```
+```plantuml
+@startuml
+actor "Spieler" as Player
+participant "Konsole / UI" as UI
+participant "Game (Logik)" as Game
+participant "History" as History
+participant "Spielfeld" as Board
+
+Player -> UI : Eingabe Koordinaten (z.B. C4)
+activate UI
+
+UI -> Game : Reveal(x, y)
+activate Game
+
+note right of Game : Memento: Zustand vor\nÄnderung speichern
+Game -> History : Save(CurrentState)
+activate History
+History --> Game
+deactivate History
+
+Game -> Board : GetCell(x, y)
+activate Board
+Board --> Game : Cell (IsMine)
+deactivate Board
+
+alt ist Mine (Verloren)
+    Game -> Game : GameOver = true
+    Game --> UI : Rückgabe: Verloren
+    UI --> Player : Meldung "Game Over"
+
+else ist Leer (Weiter)
+    Game -> Board : SetRevealed(true)
+    activate Board
+    deactivate Board
+    
+    opt 0 Nachbar-Minen
+        Game -> Game : RevealNeighbors()
+    end
+
+    Game -> Game : CheckWin()
+
+    alt Gewonnen
+        Game --> UI : Rückgabe: Gewonnen
+        UI --> Player : Meldung "Gewonnen!"
+    else Spiel läuft weiter
+        Game --> UI : Rückgabe: Weiter
+        UI --> Player : Zeichne Spielfeld neu
+    end
+end
+
+deactivate Game
+deactivate UI
+
+@enduml
+```
