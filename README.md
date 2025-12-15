@@ -118,6 +118,7 @@ classDiagram
 
     Game *-- Cell : Spielfeld (Array)
 ```
+--- 
 ```mermaid
 sequenceDiagram
     actor Player as Spieler
