@@ -1,0 +1,8 @@
+C:\Users\lacha\OneDrive\Anlagen\Mindsweeper\Minesweeper-in-C-sharp-1\Minesweeper.Tests\bin\Debug\net9.0\.msCoverageSourceRootsMapping_Minesweeper.Tests
+C:\Users\lacha\OneDrive\Anlagen\Mindsweeper\Minesweeper-in-C-sharp-1\Minesweeper.Tests\bin\Debug\net9.0\CoverletSourceRootsMapping_Minesweeper.Tests
+C:\Users\lacha\OneDrive\Anlagen\Mindsweeper\Minesweeper-in-C-sharp-1\Minesweeper.Tests\obj\Debug\net9.0\Minesweeper.Tests.csproj.AssemblyReference.cache
+C:\Users\lacha\OneDrive\Anlagen\Mindsweeper\Minesweeper-in-C-sharp-1\Minesweeper.Tests\obj\Debug\net9.0\Minesweeper.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lacha\OneDrive\Anlagen\Mindsweeper\Minesweeper-in-C-sharp-1\Minesweeper.Tests\obj\Debug\net9.0\Minesweeper.Tests.AssemblyInfoInputs.cache
+C:\Users\lacha\OneDrive\Anlagen\Mindsweeper\Minesweeper-in-C-sharp-1\Minesweeper.Tests\obj\Debug\net9.0\Minesweeper.Tests.AssemblyInfo.cs
+C:\Users\lacha\OneDrive\Anlagen\Mindsweeper\Minesweeper-in-C-sharp-1\Minesweeper.Tests\obj\Debug\net9.0\Minesweeper.Tests.csproj.CoreCompileInputs.cache
+C:\Users\lacha\OneDrive\Anlagen\Mindsweeper\Minesweeper-in-C-sharp-1\Minesweeper.Tests\obj\Debug\net9.0\Minesweeper.Tests.sourcelink.json
