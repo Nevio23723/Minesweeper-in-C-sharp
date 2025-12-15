@@ -60,7 +60,7 @@ gewünschtes Feld:
 - Die Stoppuhr, welche die Spielzeit für ein Spiel ausweist, ist optional
 - In der bekannten Version des Spiels kann man nicht nur blind Felder aufdecken, sondern auch solche markieren, wo sicher eine Mine liegt (In der oben genannten Onlineversion mit Rechtsklick). Diese Anforderung ist ebenfalls optional.
 
-## 3. Mermaid- und Sequenzdiagramm
+## 3. Klassen- und Sequenzdiagramm
 
 ```mermaid
 classDiagram 
