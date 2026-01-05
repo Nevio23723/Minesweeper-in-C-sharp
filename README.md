@@ -100,10 +100,10 @@ classDiagram
         +bool IsGameOver
         +IDifficulty CurrentDifficulty
         %% C# Indexer
-        +this[int x, int y] Cell
         +Reveal(int x, int y)
         +CreateMemento() GameMemento
         +Restore(GameMemento m)
+        +GetCell(int x, int y) Cell
     }
 
     %% VIEW: Zeichnet
