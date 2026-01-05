@@ -78,24 +78,58 @@ classDiagram
     }
 
     class Medium {
+        +int Width
+        +int Height
+        +int Mines
     }
 
     class Hard {
+        +int Width
+        +int Height
+        +int Mines
     }
 
+    %% Implementierung der Interfaces
     IDifficulty <|.. Easy  
     IDifficulty <|.. Medium
     IDifficulty <|.. Hard 
 
-    class Game {
-        +Reveal()
-        +Undo()
-        +IsGameOver
-        +IsOver
+    %% MODEL: Daten, Indexer und Logik
+    class GameModel {
+        -Cell[,] _board
+        +bool IsGameOver
+        +IDifficulty CurrentDifficulty
+        %% C# Indexer
+        +this[int x, int y] Cell
+        +Reveal(int x, int y)
+        +CreateMemento() GameMemento
+        +Restore(GameMemento m)
     }
 
-    Game --> IDifficulty : implementiert
+    %% VIEW: Zeichnet
+    class GameView {
+        +DrawBoard(GameModel model)
+        +ShowGameOver()
+    }
 
+    %% CONTROLLER: Steuert
+    class Game {
+        -GameModel model
+        -GameView view
+        -History history
+        +Start()
+        +ProcessInput()
+        +Undo()
+    }
+
+    %% Beziehungen
+    Game --> GameModel : steuert
+    Game --> GameView : nutzt
+    
+    %% Das Model nutzt die Einstellungen von IDifficulty
+    GameModel --> IDifficulty : nutzt Konfiguration
+
+    %% Memento & History
     class GameMemento {
         +Cell[,] SavedBoard
         +bool SavedGameOver
@@ -106,9 +140,9 @@ classDiagram
         +Undo() GameMemento
     }
 
-    Game --> History : nutzt
+    Game --> History : verwaltet
     History o-- GameMemento : speichert Stapel
-    Game ..> GameMemento : erstellt
+    GameModel ..> GameMemento : erstellt
 
     class Cell {
         +bool IsMine
@@ -116,7 +150,7 @@ classDiagram
         +int NeighborMines
     }
 
-    Game *-- Cell : Spielfeld (Array)
+    GameModel *-- Cell : Private Daten
 ```
 --- 
 ```mermaid
