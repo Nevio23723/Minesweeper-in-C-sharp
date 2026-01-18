@@ -7,12 +7,20 @@ using System.Threading.Tasks;
 
 namespace MineSweeper
 {
+    /// <summary>
+    /// Memento-Klasse: Speichert einen Snapshot des Spielzustands für Undo-Funktion
+    /// </summary>
     internal class GameMemento
     {
-        //Properties 
+        /// <summary>Gespeichertes Spielfeld</summary>
         public Cell[,] SavedBoard { get; }
+        
+        /// <summary>Gespeicherter GameOver-Status</summary>
         public bool SavedGameOver { get; }
 
+        /// <summary>
+        /// Konstruktor: Erstellt ein Memento mit einer Kopie des aktuellen Zustands
+        /// </summary>
         public GameMemento(Cell[,] board, bool gameOver)
         {
             //Einfache Kopie 

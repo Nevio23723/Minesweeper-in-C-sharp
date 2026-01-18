@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MineSweeper
 {
+    /// <summary>
+    /// Mittlerer Schwierigkeitsgrad: 16x16 Feld mit 40 Minen
+    /// </summary>
     internal class Medium : IDifficulty
     {
         public int Width => 16;

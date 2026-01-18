@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace MineSweeper
 {
-    internal class Hard
+    /// <summary>
+    /// Schwerer Schwierigkeitsgrad: 30x16 Feld mit 99 Minen
+    /// </summary>
+    internal class Hard : IDifficulty
     {
         public int Width => 30;
-        public int Height => 30;
+        public int Height => 16;
         public int Mines => 99;
     }
 }
