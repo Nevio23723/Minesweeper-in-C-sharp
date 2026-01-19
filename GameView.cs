@@ -17,7 +17,7 @@ namespace MineSweeper
         public void ShowWelcome()
         {
             Console.WriteLine("═══════════════════════════════════════");
-            Console.WriteLine("       MINESWEEPER - WILLKOMMEN!");
+            Console.WriteLine("       MINORSWEEPER - WILLKOMMEN!");
             Console.WriteLine("═══════════════════════════════════════");
             Console.WriteLine();
         }
@@ -29,9 +29,9 @@ namespace MineSweeper
         public int GetDifficultyChoice()
         {
             Console.WriteLine("Bitte wählen Sie einen Schwierigkeitsgrad:");
-            Console.WriteLine("1 - Einfach  (8x8,  10 Minen)");
-            Console.WriteLine("2 - Mittel   (16x16, 40 Minen)");
-            Console.WriteLine("3 - Schwer   (30x16, 99 Minen)");
+            Console.WriteLine("1 - Free  (8x8,  10 Minen)");
+            Console.WriteLine("2 - Solala  (16x16, 40 Minen)");
+            Console.WriteLine("3 - V320 typa lvl   (30x16, 99 Minen)");
             Console.Write("\nIhre Wahl (1-3): ");
 
             if (int.TryParse(Console.ReadLine(), out int choice) && choice >= 1 && choice <= 3)
@@ -147,15 +147,15 @@ namespace MineSweeper
             if (won)
             {
                 Console.WriteLine("═══════════════════════════════════════");
-                Console.WriteLine("    🎉 HERZLICHEN GLÜCKWUNSCH! 🎉");
-                Console.WriteLine("       Sie haben GEWONNEN!");
+                Console.WriteLine("             Beste wo git!    ");
+                Console.WriteLine("         6er schnitt C Scharf!");
                 Console.WriteLine("═══════════════════════════════════════");
             }
             else
             {
                 Console.WriteLine("═══════════════════════════════════════");
-                Console.WriteLine("         💥 GAME OVER! 💥");
-                Console.WriteLine("      Sie haben eine Mine getroffen!");
+                Console.WriteLine("           Du Bot    ");
+                Console.WriteLine("      Mine getroffen!");
                 Console.WriteLine("═══════════════════════════════════════");
             }
             Console.WriteLine();

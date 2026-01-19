@@ -83,7 +83,7 @@ namespace MineSweeper
             view.ShowGameOver(model.IsWon);
 
             // Fragen ob nochmal spielen
-            Console.Write("Nochmal spielen? (J/N): ");
+            Console.Write("Run it back? (J/N): ");
             string answer = Console.ReadLine()?.Trim().ToUpper();
             if (answer == "J" || answer == "JA")
             {
